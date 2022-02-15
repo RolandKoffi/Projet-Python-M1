@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+  
+{% block content %}
+
+<header role="banner" class="probootstrap-header">
+    <div class="container">
+        <a href="#" class="probootstrap-logo">Projet Python IDSI </a>
+        
+        <a href="#" class="probootstrap-burger-menu visible-xs" ><i>Menu</i></a>
+        <div class="mobile-menu-overlay"></div>
+
+    </div>
+</header>
+
+<section class="probootstrap-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3 mb80 text-center probootstrap-animate">
+          <h3 class="text-danger">
+            {% if msg %}
+              {{ msg | safe }}
+            </h3>
+            {% else %}
+              <h2>Identifiez-vous</h2>
+            {% endif %} 
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 probootstrap-animate">
+          <form action="" method="post" class="probootstrap-form mb60">
+              {% csrf_token %}
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="fname">Nom d'utilisateur</label>
+                  {{form.username}}
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="lname">Mot de passe</label>
+                  {{form.password}}
+                </div>
+              </div>
+            </div>
+            <br>
+            <div class="form-group">
+              <button class="btn btn-primary" type="submit">Connexion</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>  
+
+  {% endblock content %}
+
+

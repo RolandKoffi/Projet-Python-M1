@@ -1,0 +1,56 @@
+<html>
+<head>
+  <title>Test</title>
+  <link rel="stylesheet" href="/static/css/styles-merged.css">
+  <link rel="stylesheet" href="/static/css/style.min.css">
+  <link rel="stylesheet" href="/static/css/custom.css">
+  <style>
+
+    th {
+      font-weight: bold;
+      color:  black;
+    }
+    td {
+      color: black;
+    }
+
+    table{
+      border-color: black;
+    }
+  </style>
+
+</head>
+<body>
+
+
+  <h1 class="text-center" style="margin:5%">Liste des dormeurs du {{dateDuJour}} </h1>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4"></div>
+      <div class="col-md-4">
+        <table class="table table-bordered">
+          <thead>
+            <th class="text-center" >Noms</th>
+          </thead>
+      
+          <tbody>
+          {% for i in liste_dormeurs %}
+            <tr>
+              <td class="text-center" >{{i}}</td>
+            </tr>
+          {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+
+
+  <script src="/static/js/scripts.min.js"></script>
+  <script src="/static/js/main.min.js"></script>
+  <script src="/static/js/custom.js"></script>
+
+</body>
+</html>

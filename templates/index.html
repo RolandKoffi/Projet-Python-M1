@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+  
+{% block content %}
+
+
+  <header role="banner" class="probootstrap-header">
+    <div class="container">
+        <a href="#" class="probootstrap-logo">Projet Python IDSI </a>
+        
+        <a href="#" class="probootstrap-burger-menu visible-xs" ><i>Menu</i></a>
+        <div class="mobile-menu-overlay"></div>
+        <nav role="navigation" class="probootstrap-nav hidden-xs">
+          <ul class="probootstrap-main-nav">
+            <li class="active"> </li>
+            <li class="text-primary">Bienvenu {{user.username}} !</li>
+            <li class="active"> <a href="logout">Deconnexion</a> </li>
+          </ul>
+          <br>
+          <ul class="probootstrap-main-nav">
+            <li class="active"><a href="camera" style="width: 25%; color:white; " class="btn btn-primary text-center" href="#">Camera</a></li>
+            <li class="active"><a style="width: 25%; color:white;" class="btn btn-danger text-center" href="liste">Liste</a></li>
+            <li class="active"><a style="width: 25%; color:white;" class="btn btn-success text-center" href="session">Session</a></li>
+          </ul>
+        </nav>
+    </div>
+  </header>
+      <br>
+ 
+      <div class="container-fluid">
+        <div class="row">
+          {% for i in listeDormeurs %}
+          <div class="col-md-3 probootstrap-animate" data-animate-effect="fadeIn">
+            <img src="/static/img/{{i}}.png" alt="" style="width:100%;max-width:500px">
+              <div class="probootstrap-photo-details">
+                <h2 class="text-center">{{i}}</h2>
+              </div>
+            </a>
+          </div>
+          {% endfor %}
+          
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+{% endblock content %}
